@@ -265,8 +265,10 @@
             gap: 50px;
         }
 
+        /* Give the text and image explicit flex bases so the layout doesn't force one to stretch */
         .about-us-content {
-            flex: 1;
+            flex: 1 1 55%;
+            min-width: 220px;
         }
 
         .about-us-content h2 {
@@ -282,10 +284,35 @@
         }
 
         .about-us-image {
-            flex: 1;
+            flex: 0 0 45%;
             display: flex;
             align-items: center;
             justify-content: center;
+            max-width: 420px;
+            min-width: 220px;
+        }
+
+        /* Ensure inline SVG preserves its intrinsic aspect ratio and doesn't distort */
+        .about-us-image svg {
+            width: 100%;
+            height: auto;
+            max-width: 420px; /* keeps the illustration from getting too large */
+            max-height: 320px; /* avoid overly tall images */
+            display: block;
+        }
+
+        /* Responsive override: when stacked, let the svg be natural width */
+        @media (max-width: 992px) {
+            .about-us-image {
+                flex: 0 0 auto;
+                max-width: 360px;
+                margin-top: 20px;
+            }
+
+            .about-us-image svg {
+                max-width: 100%;
+                height: auto;
+            }
         }
 
         /* --- Final CTA Section --- */
@@ -532,7 +559,7 @@
                 </div>
                 <div class="about-us-image">
                     <!-- New SVG: friendly storefront + India tricolor accent to match site palette -->
-                    <svg width="300" height="250" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="aboutSvgTitle aboutSvgDesc">
+                    <svg width="100%" height="auto" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="aboutSvgTitle aboutSvgDesc" preserveAspectRatio="xMidYMid meet">
                         <title id="aboutSvgTitle">Made in India — small business illustration</title>
                         <desc id="aboutSvgDesc">An illustration of a small storefront with Indian tricolor accent and a badge that reads 'Made in India'.</desc>
                         <rect width="300" height="250" fill="#ffffff" rx="12" stroke="#eee" stroke-width="1"/>
