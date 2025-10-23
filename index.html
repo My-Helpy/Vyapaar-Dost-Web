@@ -149,17 +149,11 @@
         .hero-image {
             max-width: 500px;
             width: 100%;
-            margin-top: 40px;
-            border-radius: 8px;
-            /* Placeholder for an image */
-            background: #ccc;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-style: italic;
-            color: #777;
             margin: 40px auto 0;
+            border-radius: 8px;
+            background: #e9ecef; /* Light background for the SVG */
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         /* --- Features Section --- */
@@ -253,22 +247,52 @@
         
         .app-showcase-image {
             flex: 1;
-            /* Placeholder for App screenshot */
-            background: #f4f4f4;
-            height: 400px;
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-grey);
-            font-style: italic;
+            min-height: 400px;
+        }
+
+        /* --- About Us Section --- */
+        .about-us {
+            padding: 80px 0;
+            background: var(--light-grey);
+        }
+
+        .about-us .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-us-content {
+            flex: 1;
+        }
+
+        .about-us-content h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-us-content p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .about-us-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* --- Final CTA Section --- */
         .cta-section {
             padding: 80px 0;
             text-align: center;
-            background: var(--light-grey);
+            background: var(--white);
         }
 
         .cta-section h2 {
@@ -331,7 +355,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .app-showcase .container {
+            .app-showcase .container,
+            .about-us .container {
                 flex-direction: column;
             }
         }
@@ -377,7 +402,6 @@
             <a href="#" class="logo">Vyapaar<span class="highlight">Dost</span></a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#" class="btn btn-primary">Get Started</a></li>
             </ul>
@@ -394,7 +418,23 @@
                 </p>
                 <a href="#" class="btn btn-primary btn-lg">Start Your Free Trial</a>
                 <div class="hero-image">
-                    <span>[App Dashboard Screenshot Placeholder]</span>
+                    <svg width="100%" height="100%" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <rect width="200" height="100" fill="#e9ecef"/>
+                        <rect x="10" y="10" width="120" height="80" fill="#fff" stroke="#ccc" rx="5"/>
+                        <rect x="18" y="20" width="104" height="8" fill="#d0d0d0" rx="2"/>
+                        <rect x="18" y="35" width="40" height="45" fill="#005A9C" rx="3" opacity="0.7"/>
+                        <rect x="62" y="35" width="28" height="25" fill="#FF6700" rx="3" opacity="0.7"/>
+                        <rect x="62" y="65" width="28" height="15" fill="#ccc" rx="3"/>
+                        <rect x="94" y="35" width="28" height="45" fill="#ccc" rx="3"/>
+                        <rect x="140" y="10" width="50" height="80" fill="#fff" stroke="#ccc" rx="5"/>
+                        <rect x="148" y="20" width="34" height="6" fill="#d0d0d0" rx="2"/>
+                        <rect x="148" y="32" width="34" height="4" fill="#f0f0f0" rx="1"/>
+                        <rect x="148" y="42" width="34" height="4" fill="#f0f0f0" rx="1"/>
+                        <rect x="148" y="52" width="34" height="4" fill="#f0f0f0" rx="1"/>
+                        <rect x="148" y="62" width="20" height="4" fill="#f0f0f0" rx="1"/>
+                        <rect x="148" y="72" width="30" height="4" fill="#f0f0f0" rx="1"/>
+                        <!-- <text x="100" y="5" font-family="Arial, sans-serif" font-size="8" fill="#555" text-anchor="middle">Generic Dashboard</text> -->
+                    </svg>
                 </div>
             </div>
         </section>
@@ -456,7 +496,48 @@
                     </div>
                 </div>
                 <div class="app-showcase-image">
-                    <span>[Mobile App Screenshot Placeholder]</span>
+                    <svg width="200" height="400" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="5" width="90" height="190" rx="15" fill="#f4f4f4" stroke="#ccc" stroke-width="2"/>
+                        <rect x="10" y="15" width="80" height="170" rx="10" fill="#fff"/>
+                        <rect x="20" y="30" width="60" height="8" fill="#005A9C" rx="3"/>
+                        <rect x="20" y="45" width="40" height="20" fill="#f0f0f0" rx="3"/>
+                        <rect x="65" y="45" width="15" height="20" fill="#FF6700" rx="3"/>
+                        <rect x="20" y="70" width="60" height="4" fill="#e0e0e0" rx="2"/>
+                        <rect x="20" y="80" width="60" height="4" fill="#e0e0e0" rx="2"/>
+                        <rect x="20" y="90" width="60" height="4" fill="#e0e0e0" rx="2"/>
+                        <rect x="20" y="100" width="45" height="4" fill="#e0e0e0" rx="2"/>
+                        <rect x="20" y="115" width="60" height="15" fill="#f0f0f0" rx="3"/>
+                        <rect x="20" y="135" width="60" height="15" fill="#f0f0f0" rx="3"/>
+                        <rect x="20" y="155" width="60" height="15" fill="#f0f0f0" rx="3"/>
+                        <rect x="40" y="8" width="20" height="3" rx="1.5" fill="#ccc"/>
+                        <circle cx="50" cy="190" r="4" fill="#ccc"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-us">
+            <div class="container">
+                <div class="about-us-content">
+                    <h2>About Vyapaar Dost</h2>
+                    <p>
+                        We are a passionate, 'Made in India' startup on a mission to empower Indian small and medium-sized businesses. We understand the daily hustle, the complex challenges, and the dreams of the local entrepreneur.
+                    </p>
+                    <p>
+                        'Vyapaar Dost' (Business Buddy) was born from a simple idea: technology should be an enabler, not a hurdle. We are building powerful, simple, and affordable software tools that manage your complex tasks—from GST billing to inventory—so you can focus on what you do best: growing your 'vyapaar'.
+                    </p>
+                    <p>
+                        Our team is based in India, building for India. Join us as we digitize and simplify business for Bharat.
+                    </p>
+                </div>
+                <div class="about-us-image">
+                    <svg width="300" height="250" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="250" fill="#ffffff" rx="10" stroke="#eee" stroke-width="1"/>
+                        <path d="M150 20 L140 35 L120 40 L110 60 L100 80 L90 100 L80 120 L80 140 L90 160 L100 180 L115 200 L130 215 L150 230 L170 215 L185 200 L200 180 L210 160 L220 140 L220 120 L210 100 L200 80 L190 60 L180 40 L160 35 Z" fill="#FF6700" opacity="0.6"/>
+                        <text x="150" y="120" font-family="Arial, sans-serif" font-size="24" fill="#005A9C" font-weight="bold" text-anchor="middle">Made</text>
+                        <text x="150" y="150" font-family="Arial, sans-serif" font-size="24" fill="#005A9C" font-weight="bold" text-anchor="middle">in</text>
+                        <text x="150" y="180" font-family="Arial, sans-serif" new font-size="24" fill="#005A9C" font-weight="bold" text-anchor="middle">India</text>
+                    </svg>
                 </div>
             </div>
         </section>
@@ -475,6 +556,7 @@
         <div class="container">
             <ul class="footer-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
                 <li><a href="#">Contact</a></li>
