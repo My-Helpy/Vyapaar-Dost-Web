@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyapaar Dost - Your Complete Business Buddy</title>
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #005A9C; /* A professional blue */
+            --secondary-color: #FF6700; /* A vibrant, action-oriented orange */
+            --dark-grey: #333;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.3;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* --- Utility Classes --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #e05a00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--light-grey);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            background: var(--white);
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .logo .highlight {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--dark-grey);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: var(--light-grey);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 20px auto 30px;
+            color: #555;
+        }
+
+        .hero-image {
+            max-width: 500px;
+            width: 100%;
+            margin-top: 40px;
+            border-radius: 8px;
+            /* Placeholder for an image */
+            background: #ccc;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #777;
+            margin: 40px auto 0;
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .feature-card .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* --- App Showcase Section --- */
+        .app-showcase {
+            padding: 80px 0;
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .app-showcase .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .app-showcase-content {
+            flex: 1;
+        }
+        
+        .app-showcase-content h2 {
+            font-size: 36px;
+        }
+        
+        .app-showcase-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .app-buttons .app-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--dark-grey);
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .app-buttons .app-btn:hover {
+            background: var(--light-grey);
+            transform: scale(1.05);
+        }
+        
+        .app-showcase-image {
+            flex: 1;
+            /* Placeholder for App screenshot */
+            background: #f4f4f4;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-grey);
+            font-style: italic;
+        }
+
+        /* --- Final CTA Section --- */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--light-grey);
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* --- Responsive Design --- */
+
+        /* Tablets and smaller desktops */
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .app-showcase .container {
+                flex-direction: column;
+            }
+        }
+        
+        /* Mobile devices */
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .nav-links li {
+                margin: 0 12px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-showcase-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Vyapaar<span class="highlight">Dost</span></a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#" class="btn btn-primary">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Apka Business, Ab Aapke Control Mein.</h1>
+                <p>
+                    Meet Vyapaar Dost, your new business buddy! The all-in-one mobile app to manage your inventory, GST billing, payroll, and profits.
+                    Focus on growing your business, we'll handle the rest.
+                </p>
+                <a href="#" class="btn btn-primary btn-lg">Start Your Free Trial</a>
+                <div class="hero-image">
+                    <span>[App Dashboard Screenshot Placeholder]</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Everything Your Business Needs</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">🧾</div>
+                        <h3>Easy GST Billing</h3>
+                        <p>Create professional GST and non-GST invoices in seconds. Share directly with customers via WhatsApp or Email.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="icon">📦</div>
+                        <h3>Smart Inventory</h3>
+                        <p>Manage your stock with ease. Get low-stock alerts, track item history, and manage batches and expiry dates.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="icon">📊</div>
+                        <h3>Profit Analysis</h3>
+                        <p>Real-time dashboards show your daily sales, expenses, and most importantly, your profit. Make data-driven decisions.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="icon">👥</div>
+                        <h3>Simple Payroll</h3>
+                        <p>Manage employee attendance, salaries, and advances. Run payroll with just a few clicks and keep your team happy.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="icon">📈</div>
+                        <h3>Stock Insights</h3>
+                        <p>Understand which products are selling fast and which are not. Optimize your stock for maximum profitability.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="icon">📱</div>
+                        <h3>Works Everywhere</h3>
+                        <p>Access your business data from anywhere with our seamless Android and iOS apps. Your business stays in your pocket.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="app-showcase">
+            <div class="container">
+                <div class="app-showcase-content">
+                    <h2>Manage Your Business On The Go</h2>
+                    <p>
+                        Whether you are at your shop, in the market, or at home, Vyapaar Dost keeps you connected to your business 24/7.
+                        Available for both Android and iOS.
+                    </p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-btn">▶️ Get it on Google Play</a>
+                        <a href="#" class="app-btn"> Download on the App Store</a>
+                    </div>
+                </div>
+                <div class="app-showcase-image">
+                    <span>[Mobile App Screenshot Placeholder]</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Join Thousands of Indian Businesses Growing with Vyapaar Dost</h2>
+                <p>Stop guessing, start knowing. Take complete control of your business today.</p>
+                <a href="#" class="btn btn-primary btn-lg">Sign Up for Free Now</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p>&copy; 2025 Vyapaar Dost. All rights reserved.</p>
+            <p>A proud 'Made in India' product from <a href="https://vyapaar-dost.shop" style="color: #fff; text-decoration: underline;">vyapaar-dost.shop</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
